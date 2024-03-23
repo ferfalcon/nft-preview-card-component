@@ -1,6 +1,6 @@
 :root {
   --ty-heading: 600 1.375rem 'Outfit', sans-serif;
-  --ty-body: 300 1.125rem 'Outfit', sans-serif;
+  --ty-body: 300 1.125rem/1.44 'Outfit', sans-serif;
   --ty-caption: 400 1rem 'Outfit', sans-serif;
   --ty-caption-bold: 600 1rem 'Outfit', sans-serif;
   --cl-soft-blue: #8BACD9;
@@ -39,9 +39,10 @@ img {
   width: 90%;
   max-width: 20.438rem;
   margin: auto;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 2rem;
   border-radius: 0.938rem;
   background: var(--cl-card-background);
+  box-shadow: 0 1.563rem 3.125rem 0 rgba(0, 0, 0, 0.0953);
   transition: max-width 0.3s ease-out;
 }
 @media (min-width: 60rem) {
@@ -49,21 +50,85 @@ img {
     max-width: 21.875rem;
   }
 }
-.nft-card__link-image {
+.nft-card__image-link {
   position: relative;
   border-radius: 0.5rem;
   overflow: hidden;
+  margin: 0 0 1.5rem;
 }
-.nft-card__link-image::before {
+.nft-card__image-link::before {
   content: '';
-  display: block;
   position: absolute;
   inset: 0;
   background: transparent center;
   transition: background 0.3s ease-out;
 }
-.nft-card__link-image:hover::before {
+.nft-card__image-link:hover::before {
   background: var(--cl-cyan-transparent) url(../images/icon-view.svg) no-repeat center;
+}
+.nft-card__name-heading {
+  margin: 0 0 1rem;
+}
+.nft-card__name-link {
+  font: var(--ty-heading);
+  color: var(--cl-white);
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+.nft-card__name-link:hover {
+  color: var(--cl-cyan);
+}
+.nft-card__description {
+  margin: 0 0 1.5rem;
+}
+.nft-card__price-n-time-left {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.5rem;
+}
+.nft-card__price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cl-cyan);
+  font: var(--ty-caption-bold);
+  margin: 0;
+}
+.nft-card__time-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+.nft-card__time-left-icon {
+  max-width: 0.875rem;
+}
+.nft-card__author {
+  border-top: solid thin var(--cl-line);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 0 0;
+}
+.nft-card__author-image {
+  max-width: 2.063rem;
+  border-radius: 100%;
+  border: solid thin var(--cl-white);
+}
+.nft-card__author-name {
+  font: var(--ty-caption);
+  margin: 0;
+}
+.nft-card__author-name-link {
+  color: var(--cl-white);
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+.nft-card__author-name-link:hover {
+  color: var(--cl-cyan);
 }
 .signature {
   position: absolute;
