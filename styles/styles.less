@@ -41,6 +41,21 @@ img {
 	color: var(--cl-soft-blue);
 }
 
+.nft-card {
+	display: grid;
+	width: 90%;
+	max-width: 20.438rem;
+	margin: auto;
+	padding: 1.5rem;
+	border-radius: .938rem;
+	background: var(--cl-card-background);
+	transition: max-width .3s ease-out;
+	
+	@media (min-width: 60rem) {
+		max-width: 21.875rem;
+	}
+}
+
 .signature {
 	position: absolute;
 	height: 1px;
