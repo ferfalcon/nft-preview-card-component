@@ -9,6 +9,7 @@
 	--cl-soft-blue: #8BACD9;
 	--cl-white: #FFFFFF;
 	--cl-cyan: #00FFF8;
+	--cl-cyan-transparent: #00FFF888;
 	--cl-main-background: #0D192C;
 	--cl-card-background: #15263F;
 	--cl-line: #2E405A;
@@ -54,6 +55,25 @@ img {
 	@media (min-width: 60rem) {
 		max-width: 21.875rem;
 	}
+}
+
+.nft-card__link-image {
+	position: relative;
+	border-radius: .5rem;
+	overflow: hidden;
+}
+
+.nft-card__link-image::before {
+	content: '';
+	display: block;
+	position: absolute;
+	inset: 0;
+	background: transparent center;
+	transition: background .3s ease-out;
+}
+
+.nft-card__link-image:hover::before {
+	background: var(--cl-cyan-transparent) url(../images/icon-view.svg) no-repeat center;
 }
 
 .signature {
